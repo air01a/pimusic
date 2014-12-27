@@ -1,0 +1,42 @@
+#!/usr/bin/python
+import getopt, sys
+from config import IP, PORT, SSLCONTEXT, PATH
+
+def mp3Reload():
+	from MusicBrowser import MusicBrowser
+	music = MusicBrowser.MusicBrowser(PATH)
+	music.updateDB()
+	
+def help():
+	print 'pimusic :'
+        print '   -h : print this help'
+        print '   -d : debug mode'
+        print '   -r : reload music database'
+
+def main(argv):
+	global debug
+	try:
+      		opts, args = getopt.getopt(argv,"hrd",[])
+   	except getopt.GetoptError:
+      		help()
+		sys.exit(2)
+
+	options = [ opt for (opt,arg) in opts]
+	
+	if '-h' in options:
+		help()
+		sys.exit(0)
+	if '-r' in options:
+		mp3Reload()
+		sys.exit(0)
+	else:
+		from webapp import webapp
+		from webapp import views
+		if '-d' in options:
+			webapp.run(host=IP, port=PORT,debug=True,ssl_context=SSLCONTEXT)
+		else:
+			webapp.run(host=IP, port=PORT, ssl_context=SSLCONTEXT)
+
+if __name__ == "__main__":
+   debug=False
+   main(sys.argv[1:])

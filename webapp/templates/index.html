@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<meta charset="utf-8">
+		<title>RPi Administrator</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+		<link href="/static/css/bootstrap.css" rel="stylesheet">
+		<link rel="stylesheet" href="/static/css/bootstrap-toggle-buttons.css">
+		<link href="/static/css/style.css" rel="stylesheet">
+		<link href="/static/css/bootstrap-responsive.css" rel="stylesheet">
+		<link href="/static/css/bootstrapstyle.css" rel="stylesheet">
+        <script src="/static/js/jquery-1.10.2.min.js"></script>
+
+		<!-- HTML5 Support for IE -->
+		<!--[if lt IE 9]>
+		<script src="/static/js/html5shim.js"></script>
+		<![endif]-->
+
+		<!-- Favicon -->
+		<link rel="shortcut icon" href="/static/img/favicon/favicon.ico">
+
+<style>
+@font-face {
+  font-family: 'Glyphicons Halflings';
+  src: url('/static/font/glyphicons-halflings-regular.eot');
+  src: url('/static/font/glyphicons-halflings-regular.eot?#iefix') format('embedded-opentype'), url('/static/font/glyphicons-halflings-regular.woff') format('woff'), url('/static/font/glyphicons-halflings-regular.ttf') format('truetype'), url('/static/font/glyphicons-halflings-regular.svg#glyphicons-halflingsregular') format('svg');
+}
+</style>
+	</head>
+	<body>
+		<div class="navbar navbar-fixed-top navbar-inverse">
+			<div class="navbar-inner">
+				<div class="container">
+					<a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse"><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></a>
+					<a href="index.php" class="brand" style="font-weight: 600;"><img src="/static/images/sprite.png" alt="rpi"/>&nbsp;<span class="bold">Raspberry Pi</span> Admin</a>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<!-- Main content starts -->
+		<div class="content">
+			<!-- Sidebar -->
+			<div class="sidebar">
+				<div class="sidebar-dropdown"><a href="#">Navigation</a></div>
+				<div class="sidebar-inner">
+					<!--- Sidebar navigation -->
+					<!-- If the main navigation has sub navigation, then add the class "has_submenu" to "li" of main navigation. -->
+					<ul class="navi">
+						<!-- Use the class nred, ngreen, nblue, nlightblue, nviolet or norange to add background color. You need to use this in <li> tag. -->
+						
+							<li class="nred"><a href="/status/"><i class="icon-desktop"></i> Status</a></li>
+						
+							<li class="nred"><a href="/gpio/"><i class="icon-desktop"></i> Gpio</a></li>
+						
+							<li class="nred"><a href="/nasusers/"><i class="icon-desktop"></i> NAS-User</a></li>
+						
+							<li class="nred"><a href="/nasshare/"><i class="icon-desktop"></i> NAS-Share</a></li>
+						
+							<li class="nred"><a href="/minidlna/"><i class="icon-desktop"></i> Minidlna</a></li>
+						
+							<li class="nred"><a href="/pyload/"><i class="icon-desktop"></i> PyLoad</a></li>
+						
+							<li class="nred"><a href="/nzbget/"><i class="icon-desktop"></i> NZBGet</a></li>
+						
+							<li class="nred"><a href="/picam/"><i class="icon-desktop"></i> PiCam</a></li>
+						
+							<li class="nred"><a href="/filemanager/"><i class="icon-desktop"></i> FileManager</a></li>
+						
+							<li class="nred"><a href="/gateone/"><i class="icon-desktop"></i> SSH</a></li>
+													<li class="nred"><a href="/?num_logout=1"><i class="icon-desktop"></i>Logout</a></li>
+					</ul>
+				</div>
+			</div>
+			<!-- Sidebar ends -->
+<div class="mainbar">
+
+<br><h1>Status</h1>
+<hr />
+
+        
+<br /><div class="panel panel-primary" style="width: 80%;margin: auto">
+		        <div class="panel-heading">
+			          <h3 class="panel-title">Information</h3>
+        		</div>
+		 <div class="panel-body">
+
+                <div class="container-fluid">
+                        <div class="row-fluid">
+                                <div class="span12" style="margin: auto;">
+                                        <ul class="today-datas" style="margin:auto;text-align: center">
+                                                <li class="bred">
+                                                        <div class="pull-left"><i class="icon-fire"></i></div>
+                                                        <div class="datas-text pull-right"><span class="bold">45.5</span> CPU Temp.</div>
+                                                        <div class="clearfix"></div>
+						</li>
+                                                <li class="bgreen">
+                                                        <div class="pull-left"><i class="icon-tasks"></i></div>
+                                                        <div class="datas-text pull-right"><span class="bold">0.09</span> CPU Load</div>
+                                                        <div class="clearfix"></div>
+                                                </li>
+                                                <li class="blightblue">
+                                                        <div class="pull-left"><i class="icon-bolt"></i></div>
+                                                        <div class="datas-text pull-right"><span class="bold">699 Mhz</span> CPU Freq.</div>
+                                                        <div class="clearfix"></div>
+                                                </li>
+                                                <li class="bviolet">
+                                                        <div class="pull-left"><i class="icon-save"></i></div>
+                                                        <div class="datas-text pull-right"><span class="bold">18 Mb</span> Free RAM</div>
+                                                        <div class="clearfix"></div>
+                                                </li>
+                                                <li class="borange">
+                                                        <div class="pull-left"><i class="icon-hdd"></i></div>
+                                                        <div class="datas-text pull-right"><span class="bold">9 Gb</span> Free Disk</div>
+                                                        <div class="clearfix"></div>
+                                                </li><br />
+	                                         <li class="bwhile">
+	                                                <div class="pull-left"><i class="icon-hdd"></i></div>
+                                                        <div class="datas-text pull-right"><span class="bold">r1raspberrypi</span> Hostname</div>
+                                                        <div class="clearfix"></div>
+                                                </li>
+						<li class="bblack">
+                                                        <div class="pull-left"><i class="icon-hdd"></i></div>
+                                                        <div class="datas-text pull-right"><span class="bold">3d 22h 19m 17s</span> Uptime</div>
+                                                        <div class="clearfix"></div>
+                                                </li>
+						<li class="byellow">
+                                                        <div class="pull-left"><i class="icon-hdd"></i></div>
+                                                        <div class="datas-text pull-right"><span class="bold">
+
+        192.168.0.20
+</span> IP</div>
+                                                        <div class="clearfix"></div>
+                                                </li>
+
+                            			<div class="clearfix"></div>
+                                        </ul>
+                                </div>
+			</div>
+		</div>
+	</div>
+</div><br />
+
+<br />
+
+<div class="panel panel-warning" style="width: 80%;margin: auto">
+                        <div class="panel-heading">
+                                  <h3 class="panel-title">Partitions</h3>
+                        </div>
+                 <div class="panel-body">
+
+<table class="bordered" style="width: 80%;margin: auto">
+    <thead>
+    <tr>
+       <th>Mount Point</th>
+       <th>Device</th>
+       <th>Fs Type</th>
+       <th>Total (Gb)</th>
+       <th>Free</th>
+       <th>Used</th>
+       <th>Percent</th>
+    </tr>
+    </thead>
+   <tbody>
+
+   <tr >
+	<td>/</td>
+	<td>/dev/root</td>
+	<td>ext4</td>
+	<td>14 Gb</td>
+	<td>9 Gb</td>
+	<td>4 Gb</td>
+	<td>        <span class="bar">
+<span class="progression4 one progression" style="width: 33%">
+				<span title="6%" class="precent">33</span>
+			</span>
+		</span>
+</td>
+   </tr>
+
+   <tr >
+	<td>/boot</td>
+	<td>/dev/mmcblk0p1</td>
+	<td>vfat</td>
+	<td>55 Mb</td>
+	<td>46 Mb</td>
+	<td>9 Mb</td>
+	<td>        <span class="bar">
+<span class="progression4 one progression" style="width: 17%">
+				<span title="6%" class="precent">17</span>
+			</span>
+		</span>
+</td>
+   </tr>
+
+   <tr >
+	<td>/media/disk1</td>
+	<td>/dev/sda1</td>
+	<td>ext4</td>
+	<td>1771 Gb</td>
+	<td>1010 Gb</td>
+	<td>671 Gb</td>
+	<td>        <span class="bar">
+<span class="progression4 one progression" style="width: 37%">
+				<span title="6%" class="precent">37</span>
+			</span>
+		</span>
+</td>
+   </tr>
+   </tbody>
+</table>
+</div></div><br />
+
+
+		</div>
+		<!-- Content ends -->
+
+		<!-- Scroll to top -->
+		<span class="totop"><a href="#"><i class="icon-chevron-up"></i></a></span>
+		<!-- JS -->
+		<script src="/static//js/bootstrap.js"></script> <!-- Bootstrap -->
+</body>
+</html>
+
